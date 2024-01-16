@@ -6,25 +6,31 @@
          
         </ul>
       </div>
+
       <div ng-app ng-init="checked = false">
-                      <form class="form-signin" action="" method="post" name="form">
+          <form class="form-signin" action="" method="post" name="form">
             <label for="username">OTP</label>
             <input class="form-styling" type="text" name="registered email" placeholder="enter OTP"/>
            
             <div class="btn-animate">
-              <a class="btn-signin" (click)="route('auth/reset-password')">Verify</a>
+              <app-loader *ngIf="loader"></app-loader>
+              <a class="btn-signin" *ngIf="!loader" (click)="verify_otp()">Verify</a>
             </div>
-                      </form>
+              </form>
           
             <form class="form-signup" action="" method="post" name="form">
               
-              </form>
+          </form>
+
+          <div class="forgot">
+            <a (click)="verify_otp()">Resend OTP</a>
+          </div>
         
         </div>
         
         <div class="forgot">
-          <a (click)="route('auth/forgot-password')">Resend OTP</a>
-        </div>
+        <a (click)="route('auth/login')">Login</a>
+      </div>
  
     </div>
       

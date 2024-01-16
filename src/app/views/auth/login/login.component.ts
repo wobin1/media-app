@@ -32,7 +32,7 @@ export class LoginComponent {
   login(){
     this.loader = true;
     console.log(this.loginData)
-    this.api.auth('login/school', this.loginData).subscribe(
+    this.api.auth('auth', this.loginData).subscribe(
       res=>{
         if(res.status=='success'){
           this.userData = res;

@@ -8,6 +8,7 @@ import { ForgotPasswordComponent } from './forgot-password/forgot-password.compo
 import { ResetPasswordComponent } from './reset-password/reset-password.component';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { VerifyOtpComponent } from './verify-otp/verify-otp.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { VerifyOtpComponent } from './verify-otp/verify-otp.component';
   imports: [
     CommonModule,
     AuthRoutingModule,
-    SharedModule
+    SharedModule,
+    FormsModule
   ]
 })
 export class AuthModule { }

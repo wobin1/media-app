@@ -1,6 +1,15 @@
-<div class="card">
-    <h1>File Upload with</h1>
-    <p>File name: {{file.name}}</p>
-    <input type="file" (change)="getFile($event)" >
-</div>
-
+<div class="container">
+    <div class="card">
+      <h3>Upload Files</h3>
+      <div class="drop_box">
+        <header>
+          <h4>Select File here</h4>
+        </header>
+        <p *ngIf="!file">Click on choose file to upload a file</p>
+        <p *ngIf="file">File name: {{file.name}}</p>
+        <input *ngIf="!file" type="file" id="fileID" (change)="getFile($event)" >
+        <button class="btn">Upload File</button>
+      </div>
+  
+    </div>
+  </div>

@@ -20,11 +20,3 @@ body {
   ::-webkit-scrollbar-thumb {
     background-color: #802a2a;
   }
-
-
-  :root{
-    --primary-color: #41B883;
-    --accent-color: #7952B3;
-    --text-color: #ffffff;
-    --card-bg: #eeeeee;
-}

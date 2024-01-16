@@ -8,7 +8,7 @@ import { StorageService } from '../local-storage-service/storage.service';
 })
 export class ServerRequestService {
 
-  baseUrl="https://backend.ischools.ng/api/";
+  baseUrl="http://20.0.88.161:8080/onboarding/api/v1/";
   token:any;
 
   constructor(public http: HttpClient, private storage: StorageService) { }

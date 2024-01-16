@@ -14,8 +14,6 @@ import { LoaderComponent } from './components/loader/loader.component';
   declarations: [
     AuthLayoutComponent,
     MainLayoutComponent,
-    SignInUpNavComponent,
-    AppHeaderComponent,
     LoaderComponent
   ],
   imports: [
@@ -26,8 +24,7 @@ import { LoaderComponent } from './components/loader/loader.component';
   exports: [
     AuthLayoutComponent,
     MainLayoutComponent,
-    SignInUpNavComponent,
-    // AppHeaderComponent
+    LoaderComponent
   ]
 })
 export class SharedModule { }

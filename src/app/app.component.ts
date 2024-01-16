@@ -9,16 +9,5 @@ import { ToastrService } from 'ngx-toastr';
 export class AppComponent {
   title = 'media-app';
 
-  constructor(private toastr: ToastrService) {}
-
-  ngOnInit(){
-    
-    this.showSuccess()
-  }
-
-
-  showSuccess() {
-    console.log("hello world")
-    this.toastr.success('Hello world!', 'Toastr fun!');
-  }
+  
 }

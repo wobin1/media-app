@@ -11,22 +11,28 @@
           
             <form class="form-signin" action="" method="post" name="form">
             <label for="fullname">Full name</label>
-            <input class="form-styling" type="text" name="fullname" placeholder=""/>
+            <input class="form-styling" [(ngModel)]="userData.fullName" type="text"  #fullName="ngModel" type="text" name="fullName" placeholder="" required/>
+            <span *ngIf="fullName.invalid && fullName.touched" style="color: red; font-size: 12px;">*this.field is required</span>
             <label for="email">Email</label>
-            <input class="form-styling" type="text" name="email" placeholder=""/>
+            <input class="form-styling" [(ngModel)]="userData.email" type="text"  #email="ngModel" type="text" name="email" placeholder="" required/>
+            <span *ngIf="email.invalid && email.touched" style="color: red; font-size: 12px;">*this.field is required</span>
+            <label for="confirmpassword">Username</label>
+            <input class="form-styling" [(ngModel)]="userData.username" type="text"  #username="ngModel" name="username" type="text" placeholder="" required/>
+            <span *ngIf="username.invalid && username.touched" style="color: red; font-size: 12px;">*this.field is required</span>
             <label for="password">Password</label>
-            <input class="form-styling" type="text" name="password" placeholder=""/>
-            <label for="confirmpassword">Confirm password</label>
-            <input class="form-styling" type="text" name="confirmpassword" placeholder=""/>
-            <a ng-click="checked = !checked" class="btn-signup" (click)="route('auth/login')">Sign Up</a>
+            <input class="form-styling" [(ngModel)]="userData.password" type="text"  #password="ngModel" name="password" type="text" placeholder="" required/>
+            <span *ngIf="password.invalid && password.touched" style="color: red; font-size: 12px;">*this.field is required</span>
+
+            <a ng-click="checked = !checked" class="btn-signup" (click)="register()" >
+              <app-loader *ngIf="loader"></app-loader>
+              <span *ngIf="!loader" >Sign Up</span>
+            </a>
                       </form>
         
  
         </div>
         
-        <div class="forgot">
-          <a (click)="route('auth/forgot-password')">Forgot your password?</a>
-        </div>
+
         
 
     </div>
