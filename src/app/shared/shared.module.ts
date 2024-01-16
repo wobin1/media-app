@@ -7,6 +7,7 @@ import { MainLayoutComponent } from './layout/main-layout/main-layout.component'
 import { RouterModule } from '@angular/router';
 import { SignInUpNavComponent } from './components/sign-in-up-nav/sign-in-up-nav.component';
 import { AppHeaderComponent } from './components/app-header/app-header.component';
+import { LoaderComponent } from './components/loader/loader.component';
 
 
 @NgModule({
@@ -14,7 +15,8 @@ import { AppHeaderComponent } from './components/app-header/app-header.component
     AuthLayoutComponent,
     MainLayoutComponent,
     SignInUpNavComponent,
-    AppHeaderComponent
+    AppHeaderComponent,
+    LoaderComponent
   ],
   imports: [
     CommonModule,

@@ -8,6 +8,7 @@ import { ContentsComponent } from './contents/contents.component';
 import { UsersComponent } from './users/users.component';
 import { ProfilesComponent } from './profiles/profiles.component';
 import { SharedModule } from 'src/app/shared/shared.module';
+import { NgxFileDropModule } from 'ngx-file-drop';
 
 
 @NgModule({
@@ -21,7 +22,7 @@ import { SharedModule } from 'src/app/shared/shared.module';
   imports: [
     CommonModule,
     MainRoutingModule,
-    
+    NgxFileDropModule 
   ]
 })
 export class MainModule { }

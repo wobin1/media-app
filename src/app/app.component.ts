@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,17 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'media-app';
+
+  constructor(private toastr: ToastrService) {}
+
+  ngOnInit(){
+    
+    this.showSuccess()
+  }
+
+
+  showSuccess() {
+    console.log("hello world")
+    this.toastr.success('Hello world!', 'Toastr fun!');
+  }
 }
