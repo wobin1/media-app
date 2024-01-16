@@ -2,17 +2,17 @@
     <div class="frame">
       <div class="nav">
         <ul class="links">
-          <li class="signin-active" (click)="route('auth/login')"><a class="btn">Forgot Password</a></li>
+          <li class="signin-active"><a class="btn">Verify OTP</a></li>
          
         </ul>
       </div>
       <div ng-app ng-init="checked = false">
                       <form class="form-signin" action="" method="post" name="form">
-            <label for="username">Email</label>
-            <input class="form-styling" type="text" name="registered email" placeholder="enter a registered email"/>
+            <label for="username">OTP</label>
+            <input class="form-styling" type="text" name="registered email" placeholder="enter OTP"/>
            
             <div class="btn-animate">
-              <a class="btn-signin" (click)="route('auth/verify-otp')">Get OTP</a>
+              <a class="btn-signin" (click)="route('auth/reset-password')">Verify</a>
             </div>
                       </form>
           
@@ -23,7 +23,7 @@
         </div>
         
         <div class="forgot">
-          <a (click)="route('auth/login')">Login</a>
+          <a (click)="route('auth/forgot-password')">Resend OTP</a>
         </div>
  
     </div>

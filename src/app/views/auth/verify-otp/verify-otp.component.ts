@@ -2,12 +2,13 @@ import { Component } from '@angular/core';
 import { RoutingService } from 'src/app/shared/services/routing-service/routing.service';
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  selector: 'app-verify-otp',
+  templateUrl: './verify-otp.component.html',
+  styleUrls: ['./verify-otp.component.css']
 })
-export class LoginComponent {
+export class VerifyOtpComponent {
 
+    
   constructor(private router: RoutingService){}
 
   route(page:string){

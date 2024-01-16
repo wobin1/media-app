@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { RoutingService } from 'src/app/shared/services/routing-service/routing.service';
 
 @Component({
   selector: 'app-sign-up',
@@ -6,5 +7,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./sign-up.component.css']
 })
 export class SignUpComponent {
+    constructor(private router: RoutingService){}
 
+    route(page:string){
+      this.router.route(page)
+    }
 }
