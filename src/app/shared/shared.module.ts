@@ -6,13 +6,15 @@ import { AuthLayoutComponent } from './layout/auth-layout/auth-layout.component'
 import { MainLayoutComponent } from './layout/main-layout/main-layout.component';
 import { RouterModule } from '@angular/router';
 import { SignInUpNavComponent } from './components/sign-in-up-nav/sign-in-up-nav.component';
+import { AppHeaderComponent } from './components/app-header/app-header.component';
 
 
 @NgModule({
   declarations: [
     AuthLayoutComponent,
     MainLayoutComponent,
-    SignInUpNavComponent
+    SignInUpNavComponent,
+    AppHeaderComponent
   ],
   imports: [
     CommonModule,
@@ -22,7 +24,8 @@ import { SignInUpNavComponent } from './components/sign-in-up-nav/sign-in-up-nav
   exports: [
     AuthLayoutComponent,
     MainLayoutComponent,
-    SignInUpNavComponent
+    SignInUpNavComponent,
+    // AppHeaderComponent
   ]
 })
 export class SharedModule { }
