@@ -52,6 +52,8 @@ export class LoginComponent {
         this.loader = false;
       }
     )
+
+    this.route('main/video-uploads')
   }
 
 }
