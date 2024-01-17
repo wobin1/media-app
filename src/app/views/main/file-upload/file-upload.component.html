@@ -20,16 +20,26 @@
         </div>
         <div class="file-upload-section" >
           <div class="video">
-            <label for="video">Video</label>
-            <div class="form-field">
-              <input (change)="getVideo($event)"  type="file" id="video">
+            <label for="video">
+              <div class="image">
+                <img src="/assets/images/video-icon.png" alt="">
+              </div>
+            </label>
+            
+            <div class="form-field" *ngIf="!video.name">
+              <input (change)="getVideo($event)" accept="video/*" type="file" id="video">
             </div>
+            <div class="file-name">{{video.name}}</div>
           </div>
 
           <div class="thumbnail">
-            <label for="thumbnail" style="margin-top: 0.5rem;">Thumbnail</label>
+            <label for="thumbnail" style="margin-top: 0.5rem;">
+              <div class="image">
+                <img src="/assets/images/image-icon.png" alt="">
+              </div>
+            </label>
             <div class="form-field">
-              <input (change)="getThumbnail($event)"  type="file" id="thumbnail">
+              <input (change)="getThumbnail($event)"  accept="image/*" type="file" id="thumbnail">
             </div>
           </div>
         </div>

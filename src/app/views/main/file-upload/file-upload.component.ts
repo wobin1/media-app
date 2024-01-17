@@ -9,7 +9,7 @@ import { ServerRequestService } from 'src/app/shared/services/server-request-ser
 })
 export class FileUploadComponent {
 
-  video:any;
+  video:any={"name":null};
   thumbnail:any;
   response:any;
   loader:boolean=false;

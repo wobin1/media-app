@@ -56,3 +56,20 @@
   align-items: center;
   gap: 1.5rem;
 }
+
+label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image {
+  width: 100px;
+  height: 100px;
+}
+
+.image img {
+  width: 100px;
+  height: 100px;
+}
+
