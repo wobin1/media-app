@@ -12,7 +12,7 @@ export class VideoDetailComponent {
   edit:boolean=false;
   thumbnail:any;
   response:any;
-
+  loader:boolean=false;
   constructor(private api: ServerRequestService, private router: RoutingService){}
 
 
@@ -36,10 +36,12 @@ export class VideoDetailComponent {
   }
 
   update_video(){
+    this.loader = true;
     this.edit= false
   }
 
   get_uploads(){
+    
     this.api.get("storage/uploads?type=videos").subscribe(
       res=>{
         this.response = res,

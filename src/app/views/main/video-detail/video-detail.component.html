@@ -110,7 +110,8 @@
             </div>
 
             <div class="update-button">
-                <button (click)="update_video()">Update</button>
+                <app-loader *ngIf="loader"></app-loader>
+                <button *ngIf="!loader" (click)="update_video()">Update</button>
             </div>
 
       </div>
