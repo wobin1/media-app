@@ -19,9 +19,9 @@ export class SignUpComponent {
     userdata:any;
 
     userData=  {
-          "fullName":"",
+          "firstName":"",
+          "lastName":"",
           "email": "",
-          "phone_number": "",
           "username": "",
           "password": "",
           "role": "User",

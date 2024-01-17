@@ -9,6 +9,7 @@ import { UsersComponent } from './users/users.component';
 import { ProfilesComponent } from './profiles/profiles.component';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { NgxFileDropModule } from 'ngx-file-drop';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -22,7 +23,9 @@ import { NgxFileDropModule } from 'ngx-file-drop';
   imports: [
     CommonModule,
     MainRoutingModule,
-    NgxFileDropModule 
+    NgxFileDropModule,
+    FormsModule,
+    SharedModule
   ]
 })
 export class MainModule { }

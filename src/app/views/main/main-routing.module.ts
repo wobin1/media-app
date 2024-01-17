@@ -10,7 +10,8 @@ const routes: Routes = [
   {'path': 'contents', component: ContentsComponent},
   {'path': 'users', component: UsersComponent},
   {'path': 'profile', component: ProfilesComponent},
-  {'path': 'uploads', component: FileUploadComponent},
+  {'path': 'video-uploads', component: FileUploadComponent},
+  {'path': 'uploads', component: UploadsComponent},
 ];
 
 @NgModule({

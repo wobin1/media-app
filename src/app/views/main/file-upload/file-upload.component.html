@@ -1,15 +1,45 @@
-<div class="container">
-    <div class="card">
-      <h3>Upload Files</h3>
-      <div class="drop_box">
-        <header>
-          <h4>Select File here</h4>
-        </header>
-        <p *ngIf="!file">Click on choose file to upload a file</p>
-        <p *ngIf="file">File name: {{file.name}}</p>
-        <input *ngIf="!file" type="file" id="fileID" (change)="getFile($event)" >
-        <button class="btn">Upload File</button>
-      </div>
+
   
+ 
+<div class="upload-section">
+ 
+  <div class="section">
+    <div class="upload-card">
+      <div class="form">
+        <label for="title">Title</label>
+        <div class="form-field display-flex-center">
+          <input [(ngModel)]="videoData.title" type="text"  #title="ngModel" name="title" type="text"  id="title" required> 
+        </div>
+        <label for="type">Type</label>
+        <div class="form-field display-flex-center">
+          <input [(ngModel)]="videoData.type" type="text"  #type="ngModel" name="type" type="text" id="type">
+        </div>
+        <label for="description">Description</label>
+        <div class="form-field display-flex-center">
+          <input [(ngModel)]="videoData.description" type="description"  #description="ngModel" name="description" type="text" id="description">
+        </div>
+        <div class="file-upload-section" >
+          <div class="video">
+            <label for="video">Video</label>
+            <div class="form-field">
+              <input (change)="getVideo($event)"  type="file" id="video">
+            </div>
+          </div>
+
+          <div class="thumbnail">
+            <label for="thumbnail" style="margin-top: 0.5rem;">Thumbnail</label>
+            <div class="form-field">
+              <input (change)="getThumbnail($event)"  type="file" id="thumbnail">
+            </div>
+          </div>
+        </div>
+        <div class="submit" >
+          <button class="submit-button display-flex-center" (click)="uploadVideo()">
+            <app-loader *ngIf="loader"></app-loader>
+            <span *ngIf="!loader">Upload file</span>
+          </button>
+        </div>
+      </div>
     </div>
   </div>
+</div>

@@ -25,10 +25,10 @@ export class ServerRequestService {
    }
 
   post(url:string, body:object):Observable<any>{
-
-    let authToken = this.storage.getStoredData("ischoolUser")
-    this.token = authToken.access_token
-    console.log(authToken)
+    console.log("post request hit")
+    // let authToken = this.storage.getStoredData("")
+    this.token = "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJoYWtlZW10dW5kZTJAZ21haWwuY29tIiwiaWF0IjoxNzA1NDU4NTQ4LCJleHAiOjE3MDU5ODQxNDh9.Vs0sn1vMs20H9cH1qVi9JM7wLi7S1HwB16rYOjj07b0"
+    // console.log(authToken)
 
 
     return this.http.post(this.baseUrl + url, body, {

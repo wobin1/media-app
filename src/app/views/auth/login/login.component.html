@@ -8,10 +8,10 @@
       </div>
       <div ng-app ng-init="checked = false">
                       <form class="form-signin" action="" method="post" name="form">
-            <label for="email">Email</label>
+            <label class="auth-form-label" for="email">Email</label>
             <input class="form-styling" type="text" [(ngModel)]="loginData.email" type="text"  #email="ngModel" name="email" placeholder="" required/>
             <span *ngIf="email.invalid && email.touched" style="color: red; font-size: 14px;">*this.field is required</span>
-            <label for="password">Password</label>
+            <label class="auth-form-label"  for="password">Password</label>
             <input class="form-styling" type="text" [(ngModel)]="loginData.password"  #password="ngModel" name="password" type="password" matInput type="password"  placeholder="" required/>
             <span *ngIf="password.invalid && password.touched" style="color: red; font-size: 14px;">*this.field is required</span>
             <div class="btn-animate" (click)="login()">
