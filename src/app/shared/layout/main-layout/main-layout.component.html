@@ -1,8 +1,9 @@
 <div class="header">
-    <div class="logo">Company Logo</div>
+    <div class="logo" (click)="route('main/uploads')">Company Logo</div>
     <div class="menu">
-      <nav>Video upload</nav>
-      <nav>Uploads</nav>
+      <nav (click)="route('main/video-uploads')">Video upload</nav>
+      <nav (click)="route('main/uploads')">Uploads</nav>
+      <nav (click)="route('auth/login')">Logout</nav>
     </div>
   </div>
 <router-outlet></router-outlet>

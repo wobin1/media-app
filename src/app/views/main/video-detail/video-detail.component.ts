@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { RoutingService } from 'src/app/shared/services/routing-service/routing.service';
+import { ServerRequestService } from 'src/app/shared/services/server-request-service/server-request.service';
 
 @Component({
   selector: 'app-video-detail',
@@ -9,6 +11,11 @@ export class VideoDetailComponent {
 
   edit:boolean=false;
   thumbnail:any;
+  response:any;
+
+  constructor(private api: ServerRequestService, private router: RoutingService){}
+
+
   videoData:any = {
     "file":"",
     "title": "",
@@ -31,5 +38,18 @@ export class VideoDetailComponent {
   update_video(){
     this.edit= false
   }
+
+  get_uploads(){
+    this.api.get("storage/uploads?type=videos").subscribe(
+      res=>{
+        this.response = res,
+        console.log(this.response)
+      },
+      err=>{
+        console.log(err)
+      }
+    )
+  }
+
 
 }

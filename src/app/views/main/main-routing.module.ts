@@ -13,7 +13,7 @@ const routes: Routes = [
   {'path': 'profile', component: ProfilesComponent},
   {'path': 'video-uploads', component: FileUploadComponent},
   {'path': 'uploads', component: UploadsComponent},
-  {'path': 'video-details', component: VideoDetailComponent },
+  {'path': 'video-detail/:id', component: VideoDetailComponent },
 ];
 
 @NgModule({

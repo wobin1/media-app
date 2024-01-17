@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { RoutingService } from '../../services/routing-service/routing.service';
 
 @Component({
   selector: 'app-main-layout',
@@ -6,5 +7,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./main-layout.component.css']
 })
 export class MainLayoutComponent {
+
+  constructor(private router: RoutingService){}
+
+
+  route(page:string){
+    this.router.route(page)
+  }
 
 }

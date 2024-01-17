@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { RoutingService } from 'src/app/shared/services/routing-service/routing.service';
 import { ServerRequestService } from 'src/app/shared/services/server-request-service/server-request.service';
 
 @Component({
@@ -10,7 +10,7 @@ import { ServerRequestService } from 'src/app/shared/services/server-request-ser
 export class UploadsComponent {
 
   response:any;
-  constructor(private api: ServerRequestService, public router: Router){}
+  constructor(private api: ServerRequestService, public router: RoutingService){}
 
   ngOnInit(){
     this.get_uploads()
@@ -27,6 +27,10 @@ export class UploadsComponent {
         console.log(err)
       }
     )
+  }
+
+  route(page:string, id:any){
+    this.router.detail(page, id)
   }
 
 

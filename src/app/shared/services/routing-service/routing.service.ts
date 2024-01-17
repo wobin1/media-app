@@ -14,18 +14,7 @@ export class RoutingService {
   }
 
   detail(page:string, id:any){
-    if(page=='student'){
-      this.router.navigateByUrl('app/student/' + id)
-    }
-    if(page=='parent'){
-      this.router.navigateByUrl('app/parent/' + id)
-    }
-    if(page=='teacher'){
-      this.router.navigateByUrl('app/teacher/' + id)
-    }
-    if(page=='class'){
-      this.router.navigateByUrl('app/class/' + id)
-    }
+    this.router.navigateByUrl(page + id)
   }
 
   goBack(page:string){
