@@ -12,7 +12,7 @@ body {
 }
 
 .frame {
-  height: 575px;
+  height: 600px;
   width: 430px;
   background:
     linear-gradient(
@@ -30,7 +30,7 @@ body {
 }
 
 .frame-long {
-  height: 615px;
+  height: 655px;
 }
 
 .frame-short {
@@ -101,7 +101,7 @@ li {
   font-weight: 300;
   padding-left: 37px;
   padding-right: 37px;
-  padding-top: 55px;
+  padding-top: 35px;
   transition: opacity .5s ease, transform .5s ease;
 }
 
@@ -196,7 +196,7 @@ li {
   text-transform: uppercase;
   font-size: 13px;
   padding-left: 15px;
-  padding-bottom: 10px;
+  padding-bottom: 5px;
   color: rgba(255,255,255,.7);
   display: block;
 }

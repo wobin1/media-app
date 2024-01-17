@@ -9,7 +9,7 @@
       <div ng-app ng-init="checked = false">
 
           
-            <form class="form-signin" action="" method="post" name="form">
+          <form class="form-signin" action="" method="post" name="form">
             <label class="auth-form-label"  for="firstName">First Name</label>
             <input class="form-styling" [(ngModel)]="userData.firstName" type="text"  #firstName="ngModel" type="text" name="firstName" placeholder="" required/>
             <span *ngIf="firstName.invalid && firstName.touched" style="color: red; font-size: 12px;">*this.field is required</span>
@@ -30,13 +30,10 @@
               <app-loader *ngIf="loader"></app-loader>
               <span *ngIf="!loader" >Sign Up</span>
             </a>
-                      </form>
-        
+          </form>
+
  
         </div>
-        
-
-        
 
     </div>
       
