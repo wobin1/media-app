@@ -10,6 +10,7 @@ import { ProfilesComponent } from './profiles/profiles.component';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { NgxFileDropModule } from 'ngx-file-drop';
 import { FormsModule } from '@angular/forms';
+import { VideoDetailComponent } from './video-detail/video-detail.component';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { FormsModule } from '@angular/forms';
     UploadsComponent,
     ContentsComponent,
     UsersComponent,
-    ProfilesComponent
+    ProfilesComponent,
+    VideoDetailComponent
   ],
   imports: [
     CommonModule,

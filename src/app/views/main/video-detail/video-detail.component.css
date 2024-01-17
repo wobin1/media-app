@@ -1,0 +1,142 @@
+.upload-section {
+    background-color: rgb(215, 220, 221);
+    height: 100vh;
+    width: 100%;
+    
+  }
+
+.upload-card {
+    margin: 0 auto;
+    width: min(72rem, 100% - 1rem);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 3rem;
+  }
+
+  .card-header {
+    
+  }
+
+  .card-header {
+    font-size: 20px;
+    font-weight: bolder;
+  }
+
+  .card-action {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    
+  }
+
+  .card-action button {
+    width: 150px;
+    height: 40px;
+    color: black;
+    font-size: 1rem;
+    border: 1px solid rgba(64, 39, 165, 0.5);
+  }
+
+  .card-action button:hover {
+    background-color: rgba(29, 29, 55, 0.8);
+    color: white;
+  }
+
+  .card-action button:active {
+    background-color: rgba(29, 29, 55, 0.5);
+    color: white;
+  }
+
+  .card-content {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .short-card {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 1rem;
+    height: 120px;
+    border: 1px solid rgba(222, 221, 221, 1);
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+    padding: 1rem;
+    border-bottom: 3px solid rgba(29, 29, 55, 0.6);
+    border-left: 2px solid rgba(29, 29, 55, 0.6);
+  }
+
+  .card-icon {
+    color: #180b4d;
+  }
+
+  .card-detail {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 0.6rem;
+    width: 100%;
+  }
+
+  .card-title {
+    font-size: 16px;
+    font-weight: bold;
+    color: rgba(128, 128, 128, 0.6);
+  }
+
+
+  .update-button {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    
+  }
+
+  .update-button button {
+    width: 200px;
+    height: 40px;
+    background-color: rgb(29, 29, 55);
+    color: white;
+    font-size: 1rem;
+    border: 1px solid rgba(64, 39, 165, 0.5);
+  }
+
+  .update-button button:hover {
+    background-color: rgba(29, 29, 55, 0.6);
+  }
+
+  .update-button button:active {
+    background-color: rgba(29, 29, 55, 0.2);
+  }
+
+  .form-field {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+  }
+
+  input {
+    width: 97%;
+    background-color: transparent;
+    border: 1px solid rgb(219, 217, 217);
+    outline: none;
+    height: 30px;
+    box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px 0px inset;
+  }
+
+
+  @media(min-width: 500px){
+    .card-content {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+      }
+  }

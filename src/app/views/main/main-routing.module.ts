@@ -5,6 +5,7 @@ import { UsersComponent } from './users/users.component';
 import { ContentsComponent } from './contents/contents.component';
 import { ProfilesComponent } from './profiles/profiles.component';
 import { UploadsComponent } from './uploads/uploads.component';
+import { VideoDetailComponent } from './video-detail/video-detail.component';
 
 const routes: Routes = [
   {'path': 'contents', component: ContentsComponent},
@@ -12,6 +13,7 @@ const routes: Routes = [
   {'path': 'profile', component: ProfilesComponent},
   {'path': 'video-uploads', component: FileUploadComponent},
   {'path': 'uploads', component: UploadsComponent},
+  {'path': 'video-details', component: VideoDetailComponent },
 ];
 
 @NgModule({
