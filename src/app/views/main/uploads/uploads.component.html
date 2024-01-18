@@ -6,26 +6,26 @@
     <div class="section">
       <div class="upload-card">
 
-        <div class="card">
+        <div class="card" *ngFor="let row of response">
 
           <div>
             <div class="card-header">
               <div class="thumbnail">
-                  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSB6zKmfiQbKwA3mvEDXVZSv9Ftb-6CN9xFmbkSjWc_YbC4qamRrJIvi8m2P8Bi_3ADO_A&usqp=CAU" alt="">
+                  <img src={{row.thumbnailPath}} alt="">
               </div>
             </div>
   
             <div class="card-content">
-              <div class="type">Sport</div>
-              <div class="title">Why we designed Tesla the way it is</div>
-              <div class="description">
-                An exploration into the trucks polarizing design and how it is...
+              <div class="type">{{row.type}}</div>
+              <div class="title">{{row.title}}</div>
+              <div class="description" >
+                {{row.description}}
               </div>
             </div>
           </div>
 
           <div class="submit-button">
-            <button (click)="route('main/video-detail/', 2)">view</button>
+            <!-- <button (click)="route('main/video-detail/', 2)">view</button> -->
           </div>
           
         </div>

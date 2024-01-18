@@ -18,18 +18,18 @@ export class ServerRequestService {
 
   }
 
+  get_token(){
+    let authToken = this.storage.getStoredData("finremit")
+    this.token = authToken.token
+  }
+
 
   auth(url:string, body:object):Observable<any>{
-    console.log("login endpoint hit...")
     return this.http.post(this.baseUrl + url, body)
    }
 
   post(url:string, body:object):Observable<any>{
-    console.log("post request hit")
-    // let authToken = this.storage.getStoredData("")
-    this.token = "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJoYWtlZW10dW5kZTJAZ21haWwuY29tIiwiaWF0IjoxNzA1NDU4NTQ4LCJleHAiOjE3MDU5ODQxNDh9.Vs0sn1vMs20H9cH1qVi9JM7wLi7S1HwB16rYOjj07b0"
-    // console.log(authToken)
-
+    this.get_token()
 
     return this.http.post(this.baseUrl + url, body, {
       headers: new HttpHeaders({
@@ -39,16 +39,32 @@ export class ServerRequestService {
    }
  
    get(url:string):Observable<any>{
-     return this.http.get(this.baseUrl + url)
+    this.get_token()
+     return this.http.get(this.baseUrl + url, {
+      headers: new HttpHeaders({
+        'Authorization': 'Bearer ' + this.token, 
+      })
+    },)
+     
    }
  
  
    put(url:string, body:object):Observable<any>{
-     return this.http.put(this.baseUrl + url, body)
+    this.get_token()
+     return this.http.put(this.baseUrl + url, body, {
+      headers: new HttpHeaders({
+        'Authorization': 'Bearer ' + this.token, 
+      })
+    },)
    }
  
    delete(url:string):Observable<any>{
-     return this.http.delete(this.baseUrl + url)
+    this.get_token()
+     return this.http.delete(this.baseUrl + url, {
+      headers: new HttpHeaders({
+        'Authorization': 'Bearer ' + this.token, 
+      })
+    },)
    }
 
   

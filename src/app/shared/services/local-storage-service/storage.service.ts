@@ -23,6 +23,7 @@ export class StorageService {
 }
 
   getStoredData(itemName: string){
+    console.log("getting stored data")
     this.storedData= localStorage.getItem(itemName);
     return JSON.parse(this.storedData)
   }

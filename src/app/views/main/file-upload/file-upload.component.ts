@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { ServerRequestService } from 'src/app/shared/services/server-request-service/server-request.service';
 
 @Component({
@@ -10,12 +11,13 @@ import { ServerRequestService } from 'src/app/shared/services/server-request-ser
 export class FileUploadComponent {
 
   video:any={"name":null};
-  thumbnail:any;
+  thumbnail:any={"name":null};
   response:any;
   loader:boolean=false;
   constructor(public router: Router, 
               private singleRoute: ActivatedRoute, 
-              private api: ServerRequestService){}
+              private api: ServerRequestService,
+              private toastr: ToastrService){}
 
   
   videoData:any = {
@@ -25,6 +27,9 @@ export class FileUploadComponent {
     "description": "",
     "thumbnail": ""
 
+  }
+
+  ngOnInit(){
   }
 
 
@@ -55,12 +60,24 @@ export class FileUploadComponent {
       res=>{
         this.response = res,
         console.log(this.response)
+        this.toastr.success("Login successfll", 'Success')
+        alert(res.message)
         this.video = undefined;
         this.loader = false;
+        
+      
       },
       err=>{
-        console.log(err)
-        this.loader=false;
+        if(err.error.detail == undefined){
+          alert("specified media type not found: " + this.videoData.type)
+          this.loader=false
+        }else {
+          alert(err.error.detail)
+          this.toastr.error(err.error.detail, 'error')
+          alert(err.error.detail)
+          this.loader=false;
+        }
+        
       }
     )
 

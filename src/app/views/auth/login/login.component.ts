@@ -34,14 +34,15 @@ export class LoginComponent {
     console.log(this.loginData)
     this.api.auth('auth', this.loginData).subscribe(
       res=>{
-        if(res.status=='success'){
-          this.userData = res;
-          console.log(this.userData)
-          this.storage.saveItemObject("finremit", res)
-          this.toastr.success("Login successfll", 'Success')
-          this.route('main/file-upload')
-          this.loader = false;
-        }else{
+        console.log("processing data")
+        this.userData = res;
+          console.log(this.userData.token)
+          if(this.userData){
+            this.storage.saveItemObject("finremit", res)
+            this.toastr.success("Login successfll", 'Success')
+            this.route('main/video-uploads')
+            this.loader = false;
+          }else{
           this.toastr.error('there was a problem! Try again', 'error')
           this.loader = false;
         }
@@ -53,7 +54,7 @@ export class LoginComponent {
       }
     )
 
-    this.route('main/video-uploads')
+
   }
 
 }

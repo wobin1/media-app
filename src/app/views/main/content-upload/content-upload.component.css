@@ -1,7 +1,14 @@
-.upload-card {
+
+.upload-section {
+    background-color: rgb(215, 220, 221);
+    height: 100vh;
+    width: 100%;
+    
+  }
+  
+  .upload-card {
     margin: 0 auto;
     width: min(35rem, 100% - 1rem);
-    height: auto;
   
   }
   

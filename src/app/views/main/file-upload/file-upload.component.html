@@ -5,18 +5,29 @@
  
   <div class="section">
     <div class="upload-card">
+
+      <div class="title">
+        <h2>Video Upload</h2>
+      </div>
+
       <div class="form">
-        <label for="title">Title</label>
-        <div class="form-field display-flex-center">
-          <input [(ngModel)]="videoData.title" type="text"  #title="ngModel" name="title" type="text"  id="title" required> 
+        <div class="form-item">
+          <label for="title">Title</label>
+          <div class="form-field display-flex-center">
+            <input [(ngModel)]="videoData.title" type="text"  #title="ngModel" name="title" type="text"  id="title" required> 
+          </div>
         </div>
-        <label for="type">Type</label>
-        <div class="form-field display-flex-center">
-          <input [(ngModel)]="videoData.type" type="text"  #type="ngModel" name="type" type="text" id="type">
+        <div class="form-item">
+          <label for="type">Type</label>
+          <div class="form-field display-flex-center">
+            <input [(ngModel)]="videoData.type" type="text"  #type="ngModel" name="type" type="text" id="type">
+          </div>
         </div>
-        <label for="description">Description</label>
-        <div class="form-field display-flex-center">
-          <input [(ngModel)]="videoData.description" type="description"  #description="ngModel" name="description" type="text" id="description">
+        <div class="form-item">
+          <label for="description">Description</label>
+          <div class="form-field display-flex-center">
+            <input [(ngModel)]="videoData.description" type="description"  #description="ngModel" name="description" type="text" id="description">
+          </div>
         </div>
         <div class="file-upload-section" >
           <div class="video">
@@ -38,9 +49,10 @@
                 <img src="/assets/images/image-icon.png" alt="">
               </div>
             </label>
-            <div class="form-field">
+            <div class="form-field" *ngIf="!thumbnail.name">
               <input (change)="getThumbnail($event)"  accept="image/*" type="file" id="thumbnail">
             </div>
+            <div class="file-name">{{thumbnail.name}}</div>
           </div>
         </div>
         <div class="submit" >
