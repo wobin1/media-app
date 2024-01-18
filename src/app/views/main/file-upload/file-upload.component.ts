@@ -32,6 +32,14 @@ export class FileUploadComponent {
   ngOnInit(){
   }
 
+  
+  empty_content_data(){
+    this.videoData.file = "";
+    this.videoData.title = "";
+    this.videoData.type = "";
+    this.videoData.description = "";
+    this.videoData.thumbnail = "";
+  }
 
   getVideo(event:any){
     this.video = event.target.files[0]
@@ -60,10 +68,11 @@ export class FileUploadComponent {
       res=>{
         this.response = res,
         console.log(this.response)
-        this.toastr.success("Login successfll", 'Success')
         alert(res.message)
         this.video = undefined;
         this.loader = false;
+        this.empty_content_data()
+        
         
       
       },
@@ -79,8 +88,10 @@ export class FileUploadComponent {
         }
         
       }
-    )
 
+      
+    )
+    this.loader = false;
   }
 
 }

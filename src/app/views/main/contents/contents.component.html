@@ -1,6 +1,4 @@
 
-
-
   
  
 <div class="upload-section">
@@ -8,62 +6,31 @@
   <div class="section">
     <div class="upload-card">
 
-      <div class="title">
-        <h2>Video Upload</h2>
+      <div class="card" *ngFor="let row of response">
+
+        <div>
+         
+
+          <div class="card-content">
+            <!-- <div class="type">{{row.type}}</div> -->
+            <div class="title">{{row.title}}</div>
+            <div class="description" >
+              {{row.description}}
+            </div>
+
+            <div class="content" >
+              {{row.content}}
+            </div>
+          </div>
+        </div>
+
+        <div class="submit-button">
+          <!-- <button (click)="route('main/video-detail/', 2)">view</button> -->
+        </div>
+        
       </div>
 
-      <div class="form">
-        <div class="form-item">
-          <label for="title">Title</label>
-          <div class="form-field display-flex-center">
-            <input type="text"  name="title" type="text"  id="title" required> 
-          </div>
-        </div>
-        <div class="form-item">
-          <label for="type">Type</label>
-          <div class="form-field display-flex-center">
-            <input  type="text" name="type" type="text" id="type">
-          </div>
-        </div>
-        <div class="form-item">
-          <label for="description">Description</label>
-          <div class="form-field display-flex-center">
-            <input  type="description" name="description" type="text" id="description">
-          </div>
-        </div>
-        <div class="file-upload-section" >
-          <div class="video">
-            <label for="video">
-              <div class="image">
-                <img src="/assets/images/video-icon.png" alt="">
-              </div>
-            </label>
-            
-            <div class="form-field">
-              <input accept="video/*" type="file" id="video">
-            </div>
-            <div class="file-name"></div>
-          </div>
 
-          <div class="thumbnail">
-            <label for="thumbnail" style="margin-top: 0.5rem;">
-              <div class="image">
-                <img src="/assets/images/image-icon.png" alt="">
-              </div>
-            </label>
-            <div class="form-field">
-              <input  accept="image/*" type="file" id="thumbnail">
-            </div>
-            <div class="file-name"></div>
-          </div>
-        </div>
-        <div class="submit" >
-          <button class="submit-button display-flex-center">
-            <app-loader></app-loader>
-            <span>Upload file</span>
-          </button>
-        </div>
-      </div>
     </div>
   </div>
 </div>

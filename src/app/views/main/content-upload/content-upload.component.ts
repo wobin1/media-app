@@ -19,27 +19,35 @@ export class ContentUploadComponent {
 
   
   contentData:any = {
-    "file":"",
+    "tile":"",
     "description": "",
-    "contentBody": "",
+    "content": "",
 
+  }
+
+  empty_content_data(){
+    this.contentData.title = "";
+    this.contentData.description = "";
+    this.contentData.content = "";
   }
 
   ngOnInit(){
   }
 
-  uploadVideo(){
-    console.log("uploading")
+  uploadContent(){
+    console.log(this.contentData)
     this.loader = true;
 
 
-    this.api.post('storage/uploads', this.contentData).subscribe(
+    this.api.post('storage/contents', this.contentData).subscribe(
       
       res=>{
         this.response = res,
         console.log(this.response)
-        this.toastr.success("Login successfll", 'Success')
-        alert(res.message)
+        this.toastr.success(res.message, 'Success')
+        alert("Content uploaded successfully")
+        this.loader=false;
+        this.empty_content_data()
       
       },
       err=>{
@@ -47,7 +55,7 @@ export class ContentUploadComponent {
           alert("specified media type not found: ")
           this.loader=false
         }else {
-          alert(err.error.detail)
+          alert("there was error uploading content")
           this.toastr.error(err.error.detail, 'error')
           alert(err.error.detail)
           this.loader=false;
