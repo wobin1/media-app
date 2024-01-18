@@ -7,15 +7,16 @@ import { ProfilesComponent } from './profiles/profiles.component';
 import { UploadsComponent } from './uploads/uploads.component';
 import { VideoDetailComponent } from './video-detail/video-detail.component';
 import { ContentUploadComponent } from './content-upload/content-upload.component';
+import { AuthGuardService } from 'src/app/shared/services/auth-guard-service/auth-guard.service';
 
 const routes: Routes = [
-  {'path': 'contents', component: ContentsComponent},
-  {'path': 'users', component: UsersComponent},
-  {'path': 'profile', component: ProfilesComponent},
-  {'path': 'video-uploads', component: FileUploadComponent},
-  {'path': 'content-uploads', component: ContentUploadComponent},
-  {'path': 'uploads', component: UploadsComponent},
-  {'path': 'video-detail/:id', component: VideoDetailComponent },
+  {'path': 'contents', component: ContentsComponent, canActivate: [AuthGuardService]},
+  {'path': 'users', component: UsersComponent, canActivate: [AuthGuardService]},
+  {'path': 'profile', component: ProfilesComponent, canActivate: [AuthGuardService]},
+  {'path': 'video-uploads', component: FileUploadComponent, canActivate: [AuthGuardService]},
+  {'path': 'content-uploads', component: ContentUploadComponent, canActivate: [AuthGuardService]},
+  {'path': 'uploads', component: UploadsComponent, canActivate: [AuthGuardService]},
+  {'path': 'video-detail/:id', component: VideoDetailComponent, canActivate: [AuthGuardService] },
 ];
 
 @NgModule({

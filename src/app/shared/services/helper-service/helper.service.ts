@@ -11,21 +11,21 @@ export class HelperService {
               private api: ServerRequestService) { }
 
   get_token(){
-    let stored_data = this.storage.getStoredData('ischoolUser')
+    let stored_data = this.storage.getStoredData('finremit')
 
     console.log(stored_data)
 
-    return stored_data.access_token
+    return stored_data.token
   }
 
   getSchoolId(){
-    let stored_data = this.storage.getStoredData('ischoolUser')
+    let stored_data = this.storage.getStoredData('finremit')
     console.log(stored_data)
 
     if(stored_data == null){
       return "Authentication is required"
     }else{
-      return stored_data.data.id
+      return stored_data.token
     }
 
     

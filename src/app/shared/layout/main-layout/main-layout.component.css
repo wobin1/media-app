@@ -6,7 +6,7 @@
 
   .header-content {
     margin: 0 auto;
-    width: min(77rem, 100% - 1rem);
+    width: min(75rem, 100% - 1rem);
     height: 100%;
     color: white;
     display: flex;
