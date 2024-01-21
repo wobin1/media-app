@@ -5,6 +5,13 @@ import { AuthLayoutComponent } from './shared/layout/auth-layout/auth-layout.com
 import { MainLayoutComponent } from './shared/layout/main-layout/main-layout.component';
 
 const routes: Routes = [
+
+  {
+    path: '',
+    redirectTo: '/auth/login',
+    pathMatch: 'full'
+  },
+
   {path: 'auth', component: AuthLayoutComponent, children: [
     {path: '', loadChildren: () => import('./views/auth/auth.module').then(m => m.AuthModule)},
   ]},

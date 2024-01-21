@@ -9,7 +9,11 @@
   .upload-card {
     margin: 0 auto;
     width: min(35rem, 100% - 1rem);
-  
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 1.5rem;
   }
   
   .title h2 {
@@ -23,7 +27,7 @@
     justify-content: flex-start;
     align-items: flex-start;
     flex-direction: column;
-    gap: 1.5rem;
+    gap: 3.5rem;
   }
   
   .form-field {

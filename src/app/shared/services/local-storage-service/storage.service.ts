@@ -19,7 +19,9 @@ export class StorageService {
 
 
   removeItem(itemName: string){
-  localStorage.removeItem(itemName)
+    console.log("removing item")
+    localStorage.removeItem(itemName)
+    console.log("item removed")
 }
 
   getStoredData(itemName: string){

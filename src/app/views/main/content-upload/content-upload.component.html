@@ -13,28 +13,28 @@
           <div class="form-item">
             <label for="title">Title</label>
             <div class="form-field display-flex-center">
-              <input name="title" type="text"  id="title" required> 
+              <input [(ngModel)]="contentData.title" type="text"  #title="ngModel" name="title"  name="title" type="text"  id="title" required> 
             </div>
           </div>
           </div>
           <div class="form-item">
             <label for="description">Description</label>
             <div class="form-field display-flex-center">
-              <input  name="description" type="text" id="description">
+              <input [(ngModel)]="contentData.description" type="text"  #description="ngModel" name="description" type="text" id="description">
             </div>
           </div>
 
           <div class="form-item">
-            <label for="description">Description</label>
+            <label for="description">Content body</label>
             <div class="text-form-field display-flex-center">
-                <textarea cols="45" rows="5"></textarea>
+                <textarea [(ngModel)]="contentData.content" type="text"  #contentBody="ngModel" name="contentBody" cols="45" rows="5"></textarea>
             </div>
           </div>
     
           <div class="submit" >
-            <button class="submit-button display-flex-center">
-              <app-loader></app-loader>
-              <span>Upload file</span>
+            <button class="submit-button display-flex-center" (click)="uploadContent()">
+              <app-loader *ngIf="loader"></app-loader>
+              <span *ngIf="!loader">Upload file</span>
             </button>
           </div>
         </div>

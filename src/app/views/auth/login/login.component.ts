@@ -49,7 +49,9 @@ export class LoginComponent {
 
       },
       err=>{
-        this.toastr.error('Invalid Username or Password', 'error')
+        console.log(err)
+        alert("there was a problem loging in")
+        this.toastr.error(err.error.message, 'error')
         this.loader = false;
       }
     )
