@@ -8,7 +8,7 @@ import { StorageService } from '../local-storage-service/storage.service';
 })
 export class ServerRequestService {
 
-  baseUrl="https://20.0.88.161:443/onboarding/api/v1/";
+  baseUrl="https://20.0.88.161:443/api/v1/";
   token:any;
 
   constructor(public http: HttpClient, private storage: StorageService) { }
