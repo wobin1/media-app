@@ -321,6 +321,7 @@ li {
   border: none;
   border-radius: 20px;
   margin-top: -8px;
+  color: white;
 }
 
 .btn-animate {
@@ -355,6 +356,7 @@ li {
 a.btn-signup:hover, a.btn-signin:hover {
     cursor: pointer; 
     background-color: #0F4FE6;
+    color: white;
     transition: background-color .5s; 
 }
 

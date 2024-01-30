@@ -30,7 +30,7 @@
   .card {
     margin: auto;
     width: min(600px, 100% - 1rem);
-    height: 250px;
+    height: 350px;
     background-color: white;
     border-radius: 8px;
     display: flex;
@@ -85,13 +85,14 @@
   }
 
   .content {
-    height: 130px; 
+    height: 200px; 
     overflow: auto;
   }
 
   .submit-button {
     margin: 0 auto;
-    width: min(260px, 100% - 1rem);
+    /* width: min(260px, 100% - 1rem); */
+    width: min(100% - 1rem);
     display: flex;
     justify-content: flex-end;
     margin-bottom: 1rem;
@@ -100,4 +101,8 @@
   .submit-button button {
     width: 100px;
     height: 30px;
+    border: 1px solid hsla(10, 78%, 75%, 1);
+    background-color: transparent;
+    color: rgb(165, 61, 61);
+    border-radius: 3px;
   }

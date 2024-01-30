@@ -33,5 +33,20 @@ export class ContentsComponent {
     this.router.detail(page, id)
   }
 
+  delete(id:any){
+    console.log(id)
+    this.api.delete('storage/contents/' + id).subscribe(
+      res => {
+        this.response = res,
+        console.log(res)
+        this.get_content()
+      },
+      err =>{
+        console.log(err)
+        this.get_content()
+      }
+    )
+  }
+
 
 }

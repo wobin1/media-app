@@ -58,7 +58,7 @@ export class FileUploadComponent {
     formData.set('file', this.video)
     formData.set('thumbnail', this.thumbnail)
     formData.set('title', this.videoData.title)
-    formData.set('type', this.videoData.type)
+    formData.set('type', 'videos')
     formData.set('description', this.videoData.description)
 
     console.log(formData)
